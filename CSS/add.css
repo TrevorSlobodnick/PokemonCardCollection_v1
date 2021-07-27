@@ -1,0 +1,230 @@
+a:link, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+}
+
+/* HEADER STYLES */
+header{
+    min-height: 25vh;
+    max-height: 25vh;
+    background-color: rgb(70, 130, 180);
+    display: flex;
+    align-items: center;
+}
+
+#leftSideHeader, #rightSideHeader{
+    flex: 1;
+}
+
+#leftSideHeader img{
+    width: 45%;
+}
+
+#rightSideHeader ul{
+    display: flex;
+    justify-content: flex-end;
+    height: 25vh;
+}
+
+#rightSideHeader ul li{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* HEADER STYLES END */
+
+
+
+section{
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+label{
+    font-size: 1.3em;
+    padding-right: 1%;
+}
+
+#codeLabel{
+    padding-left: 3%;
+}
+
+input{
+    font-size: 1.1em;
+    padding: 2% 1%;
+}
+
+p{
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 5%;
+    padding: 0px 1%;
+    text-align: center;
+    color: gray;
+}
+
+span{color: rgb(87, 87, 87);}
+
+#addCardBtn{
+    font-size: 1.2em;
+    padding: 1% 5%;
+    cursor: pointer;
+    border: solid thin black;
+    background-color: yellow;
+    transition: font-size 0.2s;
+    margin-bottom: 5%;
+}
+
+#addCardBtn:hover{
+    font-size: 1.3em;
+}
+
+
+
+
+
+
+
+
+/* Choose Card Popup Styles */
+#chooseCard{
+    display: none;
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#cardScroller{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#cardScroller li{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chooseCardBtn{
+    font-size: 1.5em;
+    padding: 2% 10%;
+    margin: 10% 0px;
+    cursor: pointer;
+}
+
+#bottomOfChooser{
+    width: 100%;
+    min-height: 10vh;
+    max-height: 10vh;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#closeChooser{
+    color: lightblue;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+/* Choose Card Popup Styles END*/
+
+
+
+
+
+
+
+
+
+
+
+/*TABLET/IPAD*/
+@media only screen
+and (min-device-width: 641px) and (max-device-width: 1024px){
+
+}
+
+/*HORIZONTAL*/
+@media only screen
+and (min-device-width: 641px) and (max-device-width: 1024px) and (orientation: landscape){
+
+}
+
+
+/*PHONES*/
+@media only screen
+and (min-device-width: 1px) and (max-device-width: 640px){
+    #rightSideHeader ul li{
+        width: auto;
+        font-size: 1.2em;
+    }
+    
+    form{
+        flex-direction: column;
+    }
+
+    form label{
+        margin-bottom: 2%;
+    }
+
+    form input:first-of-type{
+        margin-bottom: 5%;
+    }
+
+    #addCardBtn{
+        font-size: 1.2em;
+        padding: 3% 5%;
+        width: 50%;
+    }
+
+    p{
+        font-size: 0.8em;
+    }
+
+    span{
+        font-size: 0.9em;
+    }
+
+    /*Card Chooser*/
+    .card{
+        width: 90%;
+    }
+
+    .chooseCardBtn{
+        font-size: 1.1em;
+    }
+}

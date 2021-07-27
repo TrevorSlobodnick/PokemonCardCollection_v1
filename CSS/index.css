@@ -1,0 +1,514 @@
+@font-face {
+    font-family: 'Unown';
+    font-display: block;
+    src: url('../Fonts/Unown-OVEwA.ttf') format('truetype');
+}  
+
+@font-face {
+    font-family: 'Aquino';
+    src: url('../Fonts/Aquino-Demo.ttf') format('truetype');
+} 
+
+a:link, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+}
+
+/* HEADER STYLES */
+header{
+    min-height: 25vh;
+    max-height: 25vh;
+    background-color: steelblue;
+    display: flex;
+    align-items: center;
+}
+
+#leftSideHeader, #rightSideHeader{
+    flex: 1;
+}
+
+#leftSideHeader img{
+    width: 45%;
+}
+
+#rightSideHeader ul{
+    display: flex;
+    justify-content: flex-end;
+    height: 25vh;
+}
+
+#rightSideHeader ul li{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-right: 0px 1%;
+}
+/* HEADER STYLES END */
+
+h3{
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#displayPreferences{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    border-bottom: solid thin black;
+}
+
+#displayWrapper, #sortWrapper, #filterWrapper{
+    width: 30%;
+}
+
+h6{
+    font-size: 1.2em;
+}
+
+#displayDiv, #sortDiv, #filterDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ulPreference{
+    width: 50%;
+}
+
+.ulPreference li{
+    padding: 7%;
+    cursor: pointer;
+}
+
+.ulPreference li:first-of-type{
+    border: solid thin black;
+}
+
+.ulPreference li:last-of-type{
+    border-left: solid thin black;
+    border-right: solid thin black;
+    border-bottom: solid thin black;
+}
+
+#sortBy{
+    width: 50%;
+    padding: 2% 0px;
+    font-size: 1em;
+}
+
+.selected{
+    background-color: lightblue;
+}
+
+.typeSelected{
+    opacity: 0.5;
+}
+
+.displayType:active{
+    background-color: lightblue;
+}
+
+
+
+
+
+
+
+
+/* FILTER POPUP STYLES */
+
+#filterPopup{
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    min-height: 0px;
+    max-height: 0px;
+    z-index: 10000;
+    background-color: rgba(223, 223, 223, 0.75);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+}
+
+#filterDesc{
+    color: rgb(80, 80, 80);
+    margin-top: 1%;
+    cursor: default;
+}
+
+#filterButtons{
+    width: 35%;
+    margin-top: 3%;
+    display: flex;
+}
+
+#applyFilterBtn, #closeFilterPopup{
+    flex: 1;
+    font-size: 1.3em;
+    padding: 4% 5%;
+    cursor: pointer;
+}
+
+#applyFilterBtn{
+    background-color: yellow;
+    margin-right: 1%;
+}
+
+#closeFilterPopup{
+    margin-left: 1%;
+    background-color: lightgray;
+}
+
+/* Name Version */
+#filter{
+    display: flex;
+    flex-direction: row;
+}
+
+#filterInput, #search{
+    font-size: 1.1em;
+}
+
+#search{
+    padding: 2% 5%;
+    cursor: pointer;
+}
+/* Name Version END */
+/* Type Version */
+
+#types{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    transition: 0.8s;
+}
+
+#types li{
+    font-family: Aquino, sans-serif;
+    font-size: 1.3em;
+    text-align: center;
+    padding: 2% 0px;
+    margin-bottom: 1%;
+    border-radius: 25px;
+    width: 23%;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#selectedTypes{
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+#bug, #dark, #dragon, #electric{
+    margin-top: 1%;
+}
+
+#bug{background-color: rgb(49, 112, 49);}
+#dark{background-color: rgb(54, 47, 47);}
+#dragon{background-color: rgb(91, 29, 190);}
+#electric{background-color: yellow;}
+#energy{background-color: rgb(177, 177, 177)}
+#fairy{background-color: pink;}
+#fighting{background-color: darkorange;}
+#fire{background-color: red;}
+#flying{background-color: lightskyblue;}
+#ghost{background-color: rgb(67, 23, 138);}
+#grass{background-color: green;}
+#ground{background-color: rosybrown}
+#normal{background-color: gray;}
+#ice{background-color: lightblue;}
+#poison{background-color: purple;}
+#psychic{background-color: rgb(211, 85, 127);}
+#rock{background-color: rgb(112, 65, 65);}
+#steel{background-color: slategray;}
+#trainer{background-color: rgb(177, 162, 162);}
+#water{background-color: rgb(43, 43, 228);}
+
+/* Type Version END*/
+
+/* FILTER POPUP STYLES END */
+
+
+
+
+
+
+
+
+
+
+
+
+/* LOADING SCREEN STYLES */
+
+#loadingPopup{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    z-index: 1000;
+    background-color: steelblue;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.8s ease-in-out;
+}
+
+#loadingGif{
+    transition: all 0.9s;
+}
+
+#loadingText{
+    font-size: 6em;
+    font-family: Unown, cursive;
+    cursor: default;
+    transition: all 0.9s;
+}
+
+/* LOADING SCREEN STYLES END */
+
+
+
+
+
+
+
+
+
+/* DISPLAY MODE = IMAGE - STYLES */
+
+.displayCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgba(223, 223, 223, 0.75);
+}
+
+.cardLI{
+    min-width: 25%;
+    max-width: 25%;
+}
+
+.cardImageWrapper{
+    padding: 10% 0px;
+    text-align: center;
+}
+
+.cardImage{
+    cursor: pointer;
+}
+
+/* DISPLAY MODE = IMAGE - STYLES END */
+
+
+
+
+
+
+/* DISPLAY MODE = INFO - STYLES */
+
+.displayInfo{
+    background-color: rgba(223, 223, 223, 0.75);
+}
+
+.infoLI{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0px;
+}
+
+.basicInfoWrapper, .infoTypeWrapper, .infoSeriesWrapper, .infoSetWrapper{
+    flex: 1;
+    text-align: center;
+}
+
+.infoImageWrapper{
+    width: 100%;
+}
+
+.infoImage{
+    cursor: pointer;
+    width: 25%;
+}
+
+.infoName{
+    display: inline-block;
+    padding-top: 1%;
+    width: 100%;
+}
+
+.infoType{
+    white-space: pre;
+}
+
+.cardOptionsMenu{
+    display: none;
+}
+
+/* DISPLAY MODE = INFO - STYLES END */
+
+
+
+
+
+
+
+
+
+/*TABLET/IPAD*/
+@media only screen
+and (min-device-width: 641px) and (max-device-width: 1024px){
+    header{
+        min-height: 10vh;
+        max-height: 10vh;
+    }
+
+    #rightSideHeader ul{
+        height: 10vh;
+    }
+
+    #leftSideHeader img{
+        width: 30%;
+    }
+
+    #rightSideHeader ul li{
+        font-size: 1em;
+        width: auto;
+    }
+
+    h3{
+        font-size: 1.5em;
+    }
+
+    .cardLI{
+        min-width: 33%;
+        max-width: 33%;
+    }
+
+    .cardImage{
+        width: 90%;
+    }
+}
+
+/*HORIZONTAL*/
+@media only screen
+and (min-device-width: 641px) and (max-device-width: 1024px) and (orientation: landscape){
+    header{
+        min-height: 15vh;
+        max-height: 15vh;
+    }
+
+    #rightSideHeader ul{
+        height: 15vh;
+    }
+    
+    #leftSideHeader img{
+        width: 25%;
+    }
+
+    .cardImage{
+        width: 80%;
+    }
+}
+
+
+/*PHONES*/
+@media only screen
+and (min-device-width: 1px) and (max-device-width: 640px){
+
+    header{
+        min-height: 15vh;
+        max-height: 15vh;
+    }
+
+    #rightSideHeader ul{
+        height: 15vh;
+    }
+
+    #leftSideHeader img{
+        width: 75%;
+    }
+
+    #rightSideHeader ul li{
+        font-size: 1em;
+        width: auto;
+    }
+
+    h3{
+        font-size: 1.5em;
+    }
+
+    /*display=info*/
+    .infoTypeWrapper, .infoSeriesWrapper, .infoSetWrapper{
+        font-size: 0.8em;
+    }
+
+    .cardLI{
+        min-width: 50%;
+        max-width: 50%;
+    }
+
+    .cardImage{
+        width: 90%;
+    }
+    
+    /*Preference Adjustments*/
+    h6{
+        font-size: 1em;
+        margin-bottom: 5%;
+    }
+
+    .ulPreference{
+        width: 90%;
+    }
+    
+    .ulPreference li{
+        font-size: 0.9rem;
+    }
+
+    #sortBy{
+        width: 100%;
+        padding: 2% 0px;
+        font-size: 0.9em;
+    }
+    /**/
+
+    /* Filter Adjustments*/
+    #filterButtons{
+        width: 90%;
+    }
+
+    #types li{
+        padding: 3% 0px;
+        width: 30%;
+        font-size: 0.9em;
+    }
+    /**/
+
+}
